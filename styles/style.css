@@ -1,0 +1,376 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Inico Body*/
+body{
+    overflow-x: hidden;
+    background-color: white;
+}
+body button{
+    cursor: pointer;
+}
+body h1, h2{
+    font-family: var(---ffamilyh);
+}
+body p, a{
+    font-family: var(---ffamilyp);
+}
+/*Inico Body*/
+
+body a{
+    color: white;
+    text-decoration: none;
+}
+
+.container{
+    display: flex;
+    width: 18rem;
+    justify-content: space-around;
+}
+
+:root{
+    ---cheader: #402e2a;
+    ---cnav: black;
+    ---cprincipal: #de9e36;
+    ---cparag: #212121;
+    ---fsizetitle: 40px;
+    ---fsizesubtitle: 15px;
+    ---fsizeparag: 20px;
+    ---ffamilyp: "Inter", sans-serif, Arial, Helvetica;
+    ---ffamilyh: "Ubuntu", sans-serif, Arial, Helvetica;
+}
+
+/*Inicio Header*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(---cheader);
+    width: 100%;
+    height: 3em;
+}
+header ul{
+    display: flex;
+    width: 100%;
+}
+
+header ul li{
+    font-size: var(---fsizesubtitle);
+    color: white;
+    margin: 0px 20px;
+    list-style-type: none;
+}
+header ul li a:hover{
+    color: gray;
+}
+/*Fim Header*/
+
+/*Inicio menu*/
+nav{ /*Efeito menu*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(---cnav);
+    min-height: 8vh;
+}
+.mobile-menu{
+    cursor: pointer;
+    display: none;
+}
+
+nav .mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: white;
+    margin: 8px;
+}
+
+@media (max-width: 999px) {
+
+    .nav-list{
+        position: absolute;
+        top: 14vh;
+        right: 0;
+        width: 70vw;
+        height: 92vh;
+        padding: 20px;
+        background: black;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li{
+        font-size: var(---ffamilyp);
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+}
+
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+nav ul li{
+    font-size: 22px;
+    color: white;
+    margin-left: 30px;
+    margin-right: 20px;
+    list-style-type: none;
+}
+nav ul li a:hover{
+    color: #de9e36;
+    text-decoration: 1px solid underline;
+    text-underline-offset: 25px;
+    transition: .2s;
+}
+
+nav .button01{
+    background-color: white;
+    color: black;
+    font-size: var(---fsizesubtitle);
+    font-weight: 550;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+nav .button01:hover{
+    background-color: rgba(255, 255, 255, 0.808);
+    transition: .2s;
+}
+
+nav .button02{
+    font-size: var(---fsizesubtitle);
+    font-weight: 550;
+    background-color: #de9e36;
+    color: white;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+nav .button02:hover{
+    color: #212121;
+    transition: .2s;
+}
+
+
+.nav-list.active{
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+} /*Efeito menu*/
+/*Fim menu*/
+
+/*Inicio Banner*/
+figure{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    min-height: 80vh;
+    max-height: 1000px;
+    padding: 10px;
+    background-image: url(/img/Banner-Hamburguer.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: local;
+}
+article{
+    width: 600px;
+    margin: 0px 50px;
+    padding: 30px;
+}    
+article h1{
+    font-size: var(---fsizetitle);
+    color: white;
+}
+article h2{
+    font-size: var(---fsizesubtitle);
+    color: white;
+}
+article p{
+    font-size: var(---fsizeparag);
+    color: #efefef;
+    margin: 30px 0px;
+}
+
+article .button{
+    font-size: var(---fsizesubtitle);
+    font-weight: 800;
+    width: 200px;
+    height: 45px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    background-color: #de9e36;
+    color: white;
+}
+article .button:hover{
+    color: #212121;
+    transform: scale(1.10);
+    transition: .2s;
+}
+/*Fim Banner*/
+
+/*Inicio Seta*/
+.seta-bottom{ /*Efeito flutuar*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    margin-bottom: 150px;
+}
+.seta-bottom img{
+    width: 80px;
+    animation: float 3s ease-in-out infinite;
+}
+/*Fim Seta*/
+
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+} /*Efeito flutuar*/
+
+/*Inicio Section*/
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section h1, p{
+    text-align: center;
+    padding: 10px;
+}
+
+section h1{
+    font-size: 2em;
+    color: #de9e36;
+}
+section p{
+    font-size: var(---fsizeparag);
+    margin: 20px 0px;
+}
+/*Inicio Section*/
+
+/*Inicio Promoção 1*/
+.promo1{
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+    max-width: 100vh;
+    min-height: 400px;
+    padding: 20px;
+    margin: auto;
+    background-image: url(/img/img-lanche01.svg);
+    background-size: cover;
+    background-position: center right;
+    background-attachment: local;
+}
+.promo1 button{
+    color: black;
+    width: 170px;
+    height: 40px;
+    border-radius: 27px;
+    border: 1px solid transparent;
+    transition: .2s;
+}
+.promo1 button:hover{
+    background: #de9e36;
+    color: white;
+}
+/*Fim Promoção 1*/
+
+.container-promo{
+    width: 100vw;
+    margin-top: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/*Inicio Promoção 2*/
+.container-promo .promo2{
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+    max-width: 100vh;
+    min-height: 400px;
+    padding: 20px;
+    width: 50vh;
+    min-height: 500px;
+    margin: 20px 40px;
+    background-image: url(/img/img-lanche02.svg);
+    background-size: cover;
+    background-position: center left;
+    background-attachment: local;
+}
+.container-promo .promo2 button{
+    width: 170px;
+    height: 40px;
+    border-radius: 27px;
+    border: 1px solid transparent;
+    transition: .2s;
+}
+.container-promo .promo2 button:hover{
+    background: #de9e36;
+    color: white;
+}
+/*Fim Promoção 2*/
+
+/*Inicio Promoção 3*/
+.container-promo .promo3{
+    display: flex;
+    align-items: flex-end;
+    justify-content: start;
+    max-width: 100vh;
+    min-height: 400px;
+    padding: 20px;
+    width: 50vh;
+    min-height: 500px;
+    margin: 20px 40px;
+    background-image: url(/img/img-lanche03.svg);
+    background-size: cover;
+    background-position: center left;
+    background-attachment: local;
+}
+.container-promo button{
+    width: 170px;
+    height: 40px;
+    border-radius: 27px;
+    border: 1px solid transparent;
+    transition: .2s;
+}
+.container-promo button:hover{
+    background: #de9e36;
+    color: white;
+}
+/*Fim Promoção 3*/
