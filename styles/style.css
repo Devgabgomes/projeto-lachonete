@@ -192,7 +192,7 @@ figure{
     min-height: 80vh;
     max-height: 1000px;
     padding: 10px;
-    background-image: url(img/banner-hamburguer2.png);
+    background-image: url(/img/banner-hamburguer2.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
